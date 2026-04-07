@@ -1,0 +1,20 @@
+# Hello Demo Action
+
+A simple dummy GitHub Action that greets a user by name.
+
+## Usage
+```yaml
+- uses: your-username/hello-greet-action@v1
+  with:
+    who-to-greet: "Aarav"
+```
+
+## Inputs
+| Input | Description | Required | Default |
+|-------|-------------|----------|---------|
+| `who-to-greet` | Name of the person to greet | Yes | `World` |
+
+## Outputs
+| Output | Description |
+|--------|-------------|
+| `greeting-time` | Time the greeting was delivered |
