@@ -1,0 +1,28 @@
+name: "Hello Demo Action"         # Must be unique on Marketplace
+description: "Greets a user by name — a dummy action for learning"
+author: "your-github-username"
+
+inputs:
+  who-to-greet:
+    description: "Name of the person to greet"
+    required: true
+    default: "World"
+
+outputs:
+  greeting-time:
+    description: "The time the greeting was delivered"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Greet
+      shell: bash
+      run: echo "Hello, ${{ inputs.who-to-greet }}! 👋"
+
+    - name: Set output time
+      shell: bash
+      run: echo "greeting-time=$(date)" >> $GITHUB_OUTPUT
+
+branding:
+  icon: "smile"          # Pick from: https://feathericons.com
+  color: "yellow"        # Options: white, yellow, blue, green, orange, red, purple, gray-dark
